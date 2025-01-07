@@ -60,19 +60,20 @@ Após rodar a aplicação localmente, os usuários podem acessar e interagir com
 
 A estrutura do projeto é organizada da seguinte maneira:
 /public
-index.html # Arquivo principal da aplicação (contém a estrutura HTML)
-/assets # Imagens, ícones e outros arquivos estáticos
+  index.html              # Arquivo principal da aplicação (contém a estrutura HTML)
+  /assets                 # Imagens, ícones e outros arquivos estáticos
 
 /src
-/components # Componentes reutilizáveis (ex: botões, formulários, etc.)
-/pages # Páginas principais da aplicação (ex: Login, Dashboard, etc.)
-Login.jsx # Página de login
-Dashboard.jsx # Página principal do Dashboard
-Carteira.jsx # Página de carteira
-Transferencias.jsx # Página de transferências
-Servicos.jsx # Página de serviços
-Configuracoes.jsx # Página de configurações
-App.js # Componente principal da aplicação
-index.js # Ponto de entrada do React (renderiza o App.js)
-tailwind.config.js # Arquivo de configuração do Tailwind CSS
-postcss.config.js # Arquivo de configuração do PostCSS
+  /components             # Componentes reutilizáveis (ex: botões, formulários, etc.)
+  /pages                  # Páginas principais da aplicação (ex: Login, Dashboard, etc.)
+    Login.jsx             # Página de login
+    Dashboard.jsx         # Página principal do Dashboard
+    Carteira.jsx          # Página de carteira
+    Transferencias.jsx    # Página de transferências
+    Servicos.jsx          # Página de serviços
+    Configuracoes.jsx     # Página de configurações
+  App.js                  # Componente principal da aplicação
+  index.js                # Ponto de entrada do React (renderiza o App.js)
+  tailwind.config.js      # Arquivo de configuração do Tailwind CSS
+  postcss.config.js       # Arquivo de configuração do PostCSS
+
