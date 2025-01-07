@@ -77,3 +77,15 @@ A estrutura do projeto é organizada da seguinte maneira:
   tailwind.config.js      # Arquivo de configuração do Tailwind CSS
   postcss.config.js       # Arquivo de configuração do PostCSS
 
+---
+Descrição dos principais diretórios:
+/public: Contém o arquivo index.html que serve como ponto de entrada para a aplicação. Qualquer recurso estático, como imagens e ícones, deve ser colocado dentro da pasta /assets.
+
+/src: Contém todo o código-fonte da aplicação:
+
+/components: Onde ficam os componentes reutilizáveis e pequenos blocos da UI, como botões, cabeçalhos, etc.
+/pages: Contém as páginas principais da aplicação. Cada página é um componente React que representa uma tela ou seção específica da aplicação.
+App.js: Componente principal da aplicação, onde as rotas e lógica de navegação podem ser gerenciadas.
+index.js: Ponto de entrada da aplicação React, onde o componente App é renderizado no DOM.
+tailwind.config.js: Arquivo de configuração do Tailwind CSS, onde você pode personalizar as cores, tamanhos e outros aspectos do design.
+
