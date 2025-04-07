@@ -1,23 +1,17 @@
-import React from 'react';
-import Sidebar from '../components/Sidebar';
-import CountUp from 'react-countup';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import Sidebar from "../components/Sidebar";
+import CountUp from "react-countup";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const userName = localStorage.getItem("login");
 
   const handleLogout = () => {
     // Limpa o localStorage ao deslogar
-    localStorage.removeItem('user');
-    navigate('/');
+    localStorage.removeItem("login");
+    navigate("/");
   };
-
-  // Obtém o usuário do localStorage
-  const user = JSON.parse(localStorage.getItem('user'));
-
-  if (!user) {
-    navigate('/'); // Redireciona se não estiver logado
-  }
 
   return (
     <div className="flex h-screen">
@@ -96,7 +90,7 @@ const Dashboard = () => {
 
             {/* Nome do usuário */}
             <div className="text-white">
-              Bem-vindo, <span className="font-semibold">{user.username}</span>
+              Bem-vindo, <span className="font-semibold">{userName}</span>
             </div>
             <button
               onClick={handleLogout}
@@ -117,7 +111,7 @@ const Dashboard = () => {
                   Gasto esse mês
                 </p>
                 <p class="text-[#484848] text-2xl font-bold">
-                  R${' '}
+                  R${" "}
                   <CountUp start={0} end={3547.67} decimals={2} duration={2} />
                 </p>
               </div>
@@ -129,7 +123,7 @@ const Dashboard = () => {
                   Recebido esse mês
                 </p>
                 <p class="text-[#484848] text-2xl font-bold">
-                  R${' '}
+                  R${" "}
                   <CountUp start={0} end={7648.48} decimals={2} duration={2} />
                 </p>
               </div>
@@ -143,7 +137,7 @@ const Dashboard = () => {
                   Investimentos
                 </p>
                 <p class="text-[#484848] text-2xl font-bold">
-                  R${' '}
+                  R${" "}
                   <CountUp start={0} end={9532.62} decimals={2} duration={2} />
                 </p>
               </div>
@@ -153,7 +147,7 @@ const Dashboard = () => {
               <div>
                 <p class="text-[#484848] text-[16px] font-light">Cartões</p>
                 <p class="text-[#484848] text-2xl font-bold">
-                  R${' '}
+                  R${" "}
                   <CountUp start={0} end={9532.62} decimals={2} duration={2} />
                 </p>
               </div>
@@ -187,7 +181,7 @@ const Dashboard = () => {
                       Limite disponível
                     </p>
                     <p className="text-2xl font-semibold text-[#484848]">
-                      R${' '}
+                      R${" "}
                       <CountUp start={0} end={3000} decimals={2} duration={2} />
                     </p>
                   </div>
@@ -210,7 +204,7 @@ const Dashboard = () => {
                 <div className="w-[240px] h-2 bg-gray-200 rounded-full">
                   <div
                     className="h-2 bg-green-500 rounded-full mb-2"
-                    style={{ width: '10%' }}
+                    style={{ width: "10%" }}
                   ></div>
                   <div className="flex items-center justify-between">
                     <p className="text-sm">Limite Disponivel</p>
