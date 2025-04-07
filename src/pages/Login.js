@@ -1,30 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   // Usando o useEffect para definir o usuário padrão no localStorage
   useEffect(() => {
     const defaultUser = {
-      username: 'admin',
-      password: 'admin123',
+      username: "admin",
+      password: "admin123",
     };
-    if (!localStorage.getItem('user')) {
-      localStorage.setItem('user', JSON.stringify(defaultUser));
+    if (!localStorage.getItem("user")) {
+      localStorage.setItem("user", JSON.stringify(defaultUser));
     }
   }, []);
 
   const handleLogin = (e) => {
     e.preventDefault();
+    let user = JSON.parse(localStorage.getItem("user"));
+
     if (username && password) {
-      // Salva o usuário logado no localStorage
-      localStorage.setItem('user', JSON.stringify({ username }));
-      navigate('/dashboard');
+      if (user.username === username && user.password === password) {
+        localStorage.setItem("login", username);
+        alert("Usuário logado com sucesso!");
+        navigate("/dashboard");
+      } else {
+        alert("Usuário ou Senha incorretos!");
+      }
     } else {
-      alert('Preencha todos os campos!');
+      alert("Preencha todos os campos!");
     }
   };
 
